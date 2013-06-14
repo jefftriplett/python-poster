@@ -75,7 +75,7 @@ class _StreamingHTTPMixin:
                     self.sock.sendall(data)
             else:
                 self.sock.sendall(value)
-        except socket.error, v:
+        except socket.error as v:
             if v[0] == 32:      # Broken pipe
                 self.close()
             raise
